@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <title>sign in</title>
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/jquery/jquery.js"></script>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/login.css}" >
+
+    <script>
+
+        function validate() {
+
+            var password = $("#password").val();
+            var repassword = $("#repassword").val();
+
+;            if (password != repassword){
+                $("#msg").text("两次密码不一致")
+            }
+
+        }
+
+    </script>
+
+</head>
+<body>
+
+<div class="wrap">
+
+    <div class="container">
+        <h1>sign up</h1>
+    <div class="msg">  <span id="msg">
+        </span></div>
+        <form th:action="@{/reg}" method="post">
+    <input type="text" name="username" placeholder="UserName" />
+    <input type="password" name="password" placeholder="Password" id="password" required="required" />
+    <input type="password" name="repassword" onblur="validate()"  placeholder="rePassword" id="repassword" required="required"/>
+
+ <input type="submit" value="注册"/>
+</form>
+    </div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+</body>
+</html>

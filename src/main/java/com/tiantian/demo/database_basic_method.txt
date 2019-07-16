@@ -1,0 +1,23 @@
+
+         获取数据源
+         @Autowired
+         DataSource dataSource;
+
+
+        System.out.println(dataSource.getClass());
+
+        //获取数据库的连接
+        Connection connection = dataSource.getConnection();
+
+        //查询语句的书写
+        String sql = "select * from book";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        ResultSet resultSet = statement.executeQuery();
+
+        //遍历查询结果
+        while (resultSet.next()){
+            System.out.println(resultSet.getString("book_name"));
+        }
+
+        //关掉连接
+        connection.close();

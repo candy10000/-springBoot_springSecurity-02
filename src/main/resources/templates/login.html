@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <title>sign in</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/login.css}" >
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/jquery/jquery.js"></script>
+
+    <script>
+        function reg() {
+           window.location.href="/register";
+        }
+
+    </script>
+
+</head>
+<body>
+
+<div class="wrap">
+
+    <div class="container">
+        <h1>sign in</h1>
+        <div class="msg" th:if="${param.error}">
+            用户名或密码错
+        </div>
+        <div class="msg" th:if="${param.logout}">
+            您已注销成功
+        </div>
+<form th:action="@{/login}" method="post">
+    <input type="text" name="username" placeholder="UserName" />
+    <input type="password" name="password" placeholder="Password"/>
+    <input type="submit" value="登录"/>
+    <input type="button" onclick="reg()"  value="注册"/>
+</form>
+    </div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+</body>
+</html>

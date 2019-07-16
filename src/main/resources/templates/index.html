@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
+<head>
+    <title sec:authentication="name" ></title>
+    <meta charset="UTF-8"> <!----编码----->
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="candy">
+    <meta name="Keywords" content="关键字，搜索引擎">
+    <meta name="Description" content="描述语言">
+     <link th:href="@{/css/index.css}" type="text/css" rel="stylesheet" >
+</head>
+<body>
+
+<div id="Logo">
+    <ul>
+        <li class="first">
+            <a href="#">网址</a>
+            <ul>
+                <li>
+                    <a th:href="@{/test}">test</a>
+                </li>
+
+                <li>
+                    <a th:href="@{/test1}">test1</a>
+                </li>
+
+            </ul>
+        </li>
+
+        <li sec:authorize="hasRole('ROLE_ADMIN')">
+
+            <a href="#">修改个人信息</a>
+        </li>
+
+        <li sec:authorize="hasRole('ROLE_USER')">
+            <a href="#">查看当前状态</a>
+        </li>
+
+        <li sec:authorize="hasRole('ROLE_HOME')">
+            <a href="#">问问</a>
+        </li>
+
+    </ul>
+
+</div>
+<form th:action="@{/logout}" method="post">
+    <input type="submit"  class="button pink"  value="注销"/>
+</form>
+</body>
+</html>

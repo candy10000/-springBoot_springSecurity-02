@@ -1,0 +1,128 @@
+*{ margin:0;padding:0; text-align: center}
+
+body{background:url("images/bg_title.jpg") repeat-x,url("images/bg.jpg");}
+
+#Logo{
+    width:895px;height:45px;
+    /*margin:上下 左右*/
+    margin:50px auto;
+    border-radius:10px;
+    /*html + css3 渐变画图 */
+    background-image:-webkit-linear-gradient(rgba(255, 141, 126, 0.75) 0% , rgba(255, 141, 126, 0.72) 50%, rgba(255, 141, 126, 0.94) 51%);
+    box-shadow:1px 1px 33px #fff;/*设计阴影的*/
+}
+#Logo ul li
+{
+    width:127px; height:45px;
+    list-style:none;/*去掉圆点*/
+    float:left;/*水平显示*/
+    color:white;/* #fff */
+    font-size:18px;
+    font-family:"微软雅黑";
+    text-align:center;
+    line-height:45px;/* 行高跟 高度一致时，竖直居中*/
+    border-right:1px solid #000;/*右边框*/
+}
+
+#Logo ul li a
+{
+    color:white;/* #fff */
+    font-size:18px;
+    font-family:"微软雅黑";
+    text-decoration:none;
+}
+
+#Logo ul li:hover
+{
+    background:rgba(10,5,5,0.45);
+}
+
+#Logo ul li.first:hover
+{
+    border-radius:10px 0px 0px 10px;/*左上 左下 圆弧显示 */
+}
+
+#Logo ul li.last:hover
+{
+    border-radius:0px 10px 10px 0px;/*右上 右下 圆弧显示 */
+}
+
+#Logo ul li ul li
+{
+    border:none;
+    border-top:1px solid #989898;
+    background:rgba(10,5,5,0.45);/*颜色透明度 */
+    border-radius:10px;
+
+}
+
+#Logo ul li ul
+{
+    display:none;/*不显示*/
+}
+#Logo ul li ul li:hover
+{
+    background:rgba(10,5,5,0.8);/*颜色透明度 */
+    border-radius:10px;
+}
+
+#Logo ul li:hover ul
+{
+    display:block;
+    -webkit-animation:roll 1s ease;/*roll 旋转名称，1s旋转效果 */
+}
+
+@-webkit-keyframes roll /*roll旋转名称与上面一致*/
+{
+    0% {-webkit-transform:rotate(0deg);}
+    100% {-webkit-transform:rotate(360deg);}
+}
+
+.button {
+    display: inline-block;
+    zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
+    *display: inline;
+    vertical-align: baseline;
+    margin: 0 2px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    padding: .5em 2em .55em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.button:hover {
+    text-decoration: none;
+}
+.button:active {
+    position: relative;
+    top: 1px;
+}
+
+.pink {
+    color: #feeef5;
+    border: solid 1px #a4ffee;
+    background: #f895c2;
+    background: -webkit-gradient(linear, left top, left bottom, from(#feb1d3), to(#ff8d7e));
+    background: -moz-linear-gradient(top,  #feb1d3, #ff8d7e);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#feb1d3', endColorstr='#f171ab');
+}
+.pink:hover {
+    background: #d57ea5;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f4aacb), to(#ff8d7e));
+    background: -moz-linear-gradient(top,  #f4aacb, #ff8d7e);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4aacb', endColorstr='#e86ca4');
+}
+.pink:active {
+    color: #f3c3d9;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ff8d7e), to(#feb1d3));
+    background: -moz-linear-gradient(top, #ff8d7e,  #feb1d3);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f171ab', endColorstr='#feb1d3');
+}

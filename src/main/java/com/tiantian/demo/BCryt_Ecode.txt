@@ -1,0 +1,5 @@
+
+        //BCrypt加密
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String encodePassword = passwordEncoder.encode("abel");
+        System.out.println("ecode secret:"+encodePassword);

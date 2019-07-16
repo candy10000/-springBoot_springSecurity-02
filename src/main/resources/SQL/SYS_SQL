@@ -1,0 +1,31 @@
+select  * from users;
+create table `Sys_User`(
+    `id` int primary key auto_increment,
+    `username` varchar(255) ,
+    `password` varchar(255)
+);
+create table `Sys_Role`(
+                           `id` int primary key auto_increment,
+                           `name` varchar(255)
+
+);
+create table `sys_role_user`(
+                           `id` int primary key auto_increment,
+                           `Sys_User_id` int ,
+                           `Sys_Role_id` int,
+                            constraint `Sys_User_id` foreign key (`Sys_User_id`) references Sys_User(`id`) on DELETE cascade on  update  cascade ,
+                            constraint `Sys_Role_id` foreign key (`Sys_Role_id`) references Sys_Role(`id`) on  DELETE  cascade  on update  cascade
+);
+
+
+insert into SYS_USER (id,username, password) values (1,'admin', 'admin');
+insert into SYS_USER (id,username, password) values (2,'abel', 'abel');
+
+insert into SYS_ROLE(id,name) values(1,'ROLE_ADMIN');
+insert into SYS_ROLE(id,name) values(2,'ROLE_USER');
+
+insert into SYS_ROLE_USER(SYS_USER_ID,SYS_ROLE_ID) values(1,1);
+insert into SYS_ROLE_USER(SYS_USER_ID,SYS_ROLE_ID) values(2,2);
+
+
+
